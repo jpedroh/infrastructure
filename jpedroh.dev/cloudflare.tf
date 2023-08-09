@@ -1,14 +1,14 @@
 resource "cloudflare_pages_project" "jpedroh_dev" {
-  account_id = var.cloudflare_account_id
+  account_id        = var.cloudflare_account_id
   name              = "jpedroh-dev"
-  production_branch = data.github_repository.jpedroh_dev.default_branch
+  production_branch = github_branch_default.jpedroh_dev.branch
 
   source {
     type = "github"
     config {
       owner                         = var.github_username
-      repo_name                     = data.github_repository.jpedroh_dev.name
-      production_branch             = data.github_repository.jpedroh_dev.default_branch
+      repo_name                     = github_repository.jpedroh_dev.name
+      production_branch             = github_branch_default.jpedroh_dev.branch
       pr_comments_enabled           = true
       deployments_enabled           = true
       production_deployment_enabled = true
@@ -16,7 +16,7 @@ resource "cloudflare_pages_project" "jpedroh_dev" {
   }
 
   build_config {
-    build_command = "npx @cloudflare/next-on-pages@1"
+    build_command   = "npx @cloudflare/next-on-pages@1"
     destination_dir = ".vercel/output/static"
   }
 
@@ -31,13 +31,13 @@ resource "cloudflare_pages_project" "jpedroh_dev" {
 }
 
 resource "cloudflare_pages_domain" "alias" {
-  account_id = var.cloudflare_account_id
+  account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.jpedroh_dev.name
   domain       = "jpedroh.dev"
 }
 
 resource "cloudflare_pages_domain" "www" {
-  account_id = var.cloudflare_account_id
+  account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.jpedroh_dev.name
   domain       = "www.jpedroh.dev"
 }
