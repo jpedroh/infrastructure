@@ -7,10 +7,16 @@ provider "github" {
   token = var.github_token
 }
 
+provider "planetscale" {
+  service_token_id = var.planetscale_service_token_id
+  service_token    = var.planetscale_service_token
+}
+
 module "global" {
   source = "./global"
 
   cloudflare_account = var.cloudflare_account
+  planetscale_service_organization = var.planetscale_service_organization
 }
 
 module "jpedroh_dev" {

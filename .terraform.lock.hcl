@@ -45,3 +45,26 @@ provider "registry.terraform.io/integrations/github" {
     "zh:bf4f04484151799e5c2a4e1333fa2b53cff0d6a0a489b8798c65bf6cb8719119",
   ]
 }
+
+provider "registry.terraform.io/koslib/planetscale" {
+  version     = "0.5.2"
+  constraints = "0.5.2"
+  hashes = [
+    "h1:puTWt+mhVYFWa/vbvyDap2MjydC49SKwZNoxzwghseI=",
+    "zh:1ac37d1585e2a2c785f0154a1038d83d0e0d72b898d0030c0cff49910bbdbb75",
+    "zh:1c70f5f51d736e4d407ea4dee481b86961bd9a51616420ee580439b82d777aa6",
+    "zh:255ae0d776c04df8dde854120af393943d6a2cae0dffe56940b9b4a006d8ab80",
+    "zh:28ecb0bf7ca435d4a66a9dfdc5cdf497770df963f2b702c33d5bed499641fe81",
+    "zh:3b2ab197463e75ecb287383c5fa567ad8f28906d95f17dcb96aa497d51d60a38",
+    "zh:4c8fed5fef6008886922cc3f19e069a490474aed652bf54bb753bfe88a08d64f",
+    "zh:5270c137eb4094979a91bc2f91b4d33e6a2f489390331a25bd500a88c0317e88",
+    "zh:565dd2eb1b625f54cdaeea9a8d2d67811a52dee2e8cd3a0c5be8bf8f0d0eb1f3",
+    "zh:6138459cac19b2d23392f2f7c1ad3afa5667827b657fd6f2245ac3435cae93df",
+    "zh:7ff4a0336082a4a770d15c1768f19b22f98ea22ed7c6996e1f08dbcbfd9ac6ef",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:b92b7c8df922650a469b4bf383b7b5644707d887d56d2b2c2e5a57c7b5ef4d7f",
+    "zh:bda972cc38df8be5a15a7a444a7284b611e7a49f6399bd872aad12d5fcdaa557",
+    "zh:c9a1d462859496c2bfc336f5c133fd221c5b2d50fff7dac4e5a7db51707f2f75",
+    "zh:d0fa9e1d7895e02899aa905a16c5a2ef9aa754e7372a254f56492c4417fed117",
+  ]
+}
