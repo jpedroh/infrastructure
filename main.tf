@@ -35,6 +35,10 @@ module "mach" {
 
   cloudflare_account_id = module.global.cloudflare_account_id
   cloudflare_zone_id    = module.global.cloudflare_zone_id
+
+  database_host_preview     = module.global.planetscale_database_preview_host
+  database_username_preview = module.global.planetscale_database_preview_username
+  database_password_preview = module.global.planetscale_database_preview_password
 }
 
 module "reading_list" {
