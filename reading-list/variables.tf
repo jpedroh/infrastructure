@@ -31,6 +31,11 @@ variable "database_password_production" {
   sensitive = true
 }
 
+variable "database_url_production" {
+  type      = string
+  sensitive = true
+}
+
 variable "database_host_preview" {
   type      = string
   sensitive = true

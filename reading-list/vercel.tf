@@ -48,6 +48,13 @@ resource "vercel_project_environment_variable" "database_password_production" {
   target     = ["production"]
 }
 
+resource "vercel_project_environment_variable" "database_url_production" {
+  project_id = vercel_project.reading_list.id
+  key        = "DATABASE_URL"
+  value      = var.database_url_production
+  target     = ["production"]
+}
+
 resource "vercel_project_environment_variable" "database_host_preview" {
   project_id = vercel_project.reading_list.id
   key        = "DATABASE_HOST"
@@ -66,6 +73,13 @@ resource "vercel_project_environment_variable" "database_password_preview" {
   project_id = vercel_project.reading_list.id
   key        = "DATABASE_PASSWORD"
   value      = var.database_password_preview
+  target     = ["preview"]
+}
+
+resource "vercel_project_environment_variable" "database_url_preview" {
+  project_id = vercel_project.reading_list.id
+  key        = "DATABASE_URL"
+  value      = var.database_url_preview
   target     = ["preview"]
 }
 
