@@ -1,3 +1,3 @@
-data "github_user" "main" {
-  username = "jpedroh"
+data "github_user" "current" {
+  username = ""
 }

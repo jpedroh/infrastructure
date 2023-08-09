@@ -7,5 +7,5 @@ output "cloudflare_zone_id" {
 }
 
 output "github_current_username" {
-  value = data.github_user.main.username
+  value = data.github_user.current.login
 }
