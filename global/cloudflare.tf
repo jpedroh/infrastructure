@@ -1,8 +1,8 @@
-data "cloudflare_accounts" "main" {
-  name = var.cloudflare_account
+resource "cloudflare_account" "main" {
+  name = local.cloudflare_account_name
 }
 
-data "cloudflare_zone" "jpedroh_dev" {
-  account_id = data.cloudflare_accounts.main.accounts.0.id
-  name       = "jpedroh.dev"
+resource "cloudflare_zone" "jpedroh_dev" {
+  account_id = cloudflare_account.main.id
+  zone       = local.domain_name
 }

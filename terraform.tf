@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "jpedroh"
+
+    workspaces {
+      name = "infrastructure"
+    }
+  }
+
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
@@ -11,6 +19,10 @@ terraform {
     planetscale = {
       source  = "koslib/planetscale"
       version = "0.5.2"
+    }
+    vercel = {
+      source  = "vercel/vercel"
+      version = "~> 0.3"
     }
   }
 }

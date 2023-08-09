@@ -1,6 +1,6 @@
 resource "cloudflare_record" "reading_list" {
   zone_id = var.cloudflare_zone_id
-  name    = "reading-list"
+  name    = local.project_name
   value   = "cname.vercel-dns.com"
   type    = "CNAME"
   ttl     = 3600

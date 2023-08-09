@@ -12,11 +12,12 @@ provider "planetscale" {
   service_token    = var.planetscale_service_token
 }
 
+provider "vercel" {
+  api_token = var.vercel_api_token
+}
+
 module "global" {
   source = "./global"
-
-  cloudflare_account = var.cloudflare_account
-  planetscale_service_organization = var.planetscale_service_organization
 }
 
 module "jpedroh_dev" {
@@ -42,4 +43,15 @@ module "reading_list" {
 
   cloudflare_account_id = module.global.cloudflare_account_id
   cloudflare_zone_id    = module.global.cloudflare_zone_id
+
+  database_host_production     = module.global.planetscale_database_production_host
+  database_username_production = module.global.planetscale_database_production_username
+  database_password_production = module.global.planetscale_database_production_password
+
+  database_host_preview     = module.global.planetscale_database_preview_host
+  database_username_preview = module.global.planetscale_database_preview_username
+  database_password_preview = module.global.planetscale_database_preview_password
+
+  otp_secret_production  = var.otp_secret_production
+  otp_secret_dev_preview = var.otp_secret_dev_preview
 }

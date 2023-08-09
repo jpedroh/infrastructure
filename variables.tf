@@ -8,10 +8,6 @@ variable "cloudflare_email" {
   sensitive = true
 }
 
-variable "cloudflare_account" {
-  type      = string
-}
-
 variable "github_token" {
   type      = string
   sensitive = true
@@ -27,6 +23,17 @@ variable "planetscale_service_token" {
   sensitive = true
 }
 
-variable "planetscale_service_organization" {
+variable "vercel_api_token" {
   type      = string
+  sensitive = true
+}
+
+variable "otp_secret_production" {
+  type      = string
+  sensitive = true
+}
+
+variable "otp_secret_dev_preview" {
+  type      = string
+  sensitive = true
 }

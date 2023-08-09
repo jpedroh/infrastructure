@@ -1,11 +1,11 @@
 data "planetscale_database_branch_passwords" "production" {
-    organization = var.planetscale_service_organization
-    database = "mach"
-    branch = "main"
+  organization = local.planetscale_service_organization
+  database     = local.database_name
+  branch       = local.database_production_branch_name
 }
 
 data "planetscale_database_branch_passwords" "preview" {
-    organization = var.planetscale_service_organization
-    database = "mach"
-    branch = "preview"
+  organization = local.planetscale_service_organization
+  database     = local.database_name
+  branch       = local.database_preview_branch_name
 }

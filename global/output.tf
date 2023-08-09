@@ -1,9 +1,9 @@
 output "cloudflare_account_id" {
-  value = data.cloudflare_accounts.main.accounts.0.id
+  value = cloudflare_account.main.id
 }
 
 output "cloudflare_zone_id" {
-  value = data.cloudflare_zone.jpedroh_dev.id
+  value = cloudflare_zone.jpedroh_dev.id
 }
 
 output "github_current_username" {
@@ -23,13 +23,13 @@ output "planetscale_database_production_password" {
 }
 
 output "planetscale_database_preview_host" {
-   value = data.planetscale_database_branch_passwords.preview.passwords.0.hostname
+  value = data.planetscale_database_branch_passwords.preview.passwords.0.hostname
 }
 
 output "planetscale_database_preview_username" {
-   value = data.planetscale_database_branch_passwords.preview.passwords.0.username
+  value = data.planetscale_database_branch_passwords.preview.passwords.0.username
 }
 
 output "planetscale_database_preview_password" {
-   value = data.planetscale_database_branch_passwords.preview.passwords.0.plaintext
+  value = data.planetscale_database_branch_passwords.preview.passwords.0.plaintext
 }
