@@ -10,6 +10,11 @@ resource "vercel_project" "mach" {
   output_directory = "packages/app/.next"
 }
 
+resource "vercel_project_domain" "mach" {
+  project_id = vercel_project.mach.id
+  domain     = cloudflare_record.mach.hostname
+}
+
 resource "vercel_project_environment_variable" "database_host_preview" {
   project_id = vercel_project.mach.id
   key        = "DATABASE_HOST"
@@ -29,4 +34,25 @@ resource "vercel_project_environment_variable" "database_password_preview" {
   key        = "DATABASE_PASSWORD"
   value      = var.database_password_preview
   target     = ["preview"]
+}
+
+resource "vercel_project_environment_variable" "database_host_production" {
+  project_id = vercel_project.mach.id
+  key        = "DATABASE_HOST"
+  value      = var.database_host_production
+  target     = ["production"]
+}
+
+resource "vercel_project_environment_variable" "database_username_production" {
+  project_id = vercel_project.mach.id
+  key        = "DATABASE_USERNAME"
+  value      = var.database_username_production
+  target     = ["production"]
+}
+
+resource "vercel_project_environment_variable" "database_password_production" {
+  project_id = vercel_project.mach.id
+  key        = "DATABASE_PASSWORD"
+  value      = var.database_password_production
+  target     = ["production"]
 }

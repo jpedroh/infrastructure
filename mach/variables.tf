@@ -20,3 +20,18 @@ variable "database_password_preview" {
   type      = string
   sensitive = true
 }
+
+variable "database_host_production" {
+  type      = string
+  sensitive = true
+}
+
+variable "database_username_production" {
+  type      = string
+  sensitive = true
+}
+
+variable "database_password_production" {
+  type      = string
+  sensitive = true
+}
