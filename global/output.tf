@@ -11,25 +11,36 @@ output "github_current_username" {
 }
 
 output "planetscale_database_production_host" {
-  value = data.planetscale_database_branch_passwords.production.passwords.0.hostname
+  value     = data.planetscale_database_branch_passwords.production.passwords.0.hostname
+  sensitive = true
 }
 
 output "planetscale_database_production_username" {
-  value = data.planetscale_database_branch_passwords.production.passwords.0.username
+  value     = data.planetscale_database_branch_passwords.production.passwords.0.username
+  sensitive = true
 }
 
 output "planetscale_database_production_password" {
-  value = data.planetscale_database_branch_passwords.production.passwords.0.plaintext
+  value     = data.planetscale_database_branch_passwords.production.passwords.0.plaintext
+  sensitive = true
 }
 
 output "planetscale_database_preview_host" {
-  value = data.planetscale_database_branch_passwords.preview.passwords.0.hostname
+  value     = data.planetscale_database_branch_passwords.preview.passwords.0.hostname
+  sensitive = true
 }
 
 output "planetscale_database_preview_username" {
-  value = data.planetscale_database_branch_passwords.preview.passwords.0.username
+  value     = data.planetscale_database_branch_passwords.preview.passwords.0.username
+  sensitive = true
 }
 
 output "planetscale_database_preview_password" {
-  value = data.planetscale_database_branch_passwords.preview.passwords.0.plaintext
+  value     = data.planetscale_database_branch_passwords.preview.passwords.0.plaintext
+  sensitive = true
+}
+
+output "planetscale_database_preview_url" {
+  value     = format("mysql://%s:%s@%s/%s?ssl={\"rejectUnauthorized\":true}", data.planetscale_database_branch_passwords.preview.passwords.0.username, data.planetscale_database_branch_passwords.preview.passwords.0.plaintext, data.planetscale_database_branch_passwords.preview.passwords.0.hostname, local.database_name)
+  sensitive = true
 }

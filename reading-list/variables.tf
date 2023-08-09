@@ -45,3 +45,8 @@ variable "database_password_preview" {
   type      = string
   sensitive = true
 }
+
+variable "database_url_preview" {
+  type      = string
+  sensitive = true
+}

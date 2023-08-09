@@ -51,6 +51,7 @@ module "reading_list" {
   database_host_preview     = module.global.planetscale_database_preview_host
   database_username_preview = module.global.planetscale_database_preview_username
   database_password_preview = module.global.planetscale_database_preview_password
+  database_url_preview      = module.global.planetscale_database_preview_url
 
   otp_secret_production  = var.otp_secret_production
   otp_secret_dev_preview = var.otp_secret_dev_preview
