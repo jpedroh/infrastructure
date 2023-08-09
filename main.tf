@@ -43,6 +43,9 @@ module "mach" {
   database_host_preview     = module.global.planetscale_database_preview_host
   database_username_preview = module.global.planetscale_database_preview_username
   database_password_preview = module.global.planetscale_database_preview_password
+
+  aisweb_api_key = var.aisweb_api_key
+  aisweb_api_password = var.aisweb_api_password
 }
 
 module "reading_list" {

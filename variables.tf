@@ -37,3 +37,13 @@ variable "otp_secret_dev_preview" {
   type      = string
   sensitive = true
 }
+
+variable "aisweb_api_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "aisweb_api_password" {
+  type      = string
+  sensitive = true
+}
