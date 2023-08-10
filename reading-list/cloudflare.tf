@@ -59,7 +59,7 @@ resource "cloudflare_pages_project" "reading_list" {
 resource "cloudflare_pages_domain" "reading_list_pages" {
   account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.reading_list.name
-  domain       = "${local.project_name}-pages.jpedroh.dev"
+  domain       = "${local.project_name}.jpedroh.dev"
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}
