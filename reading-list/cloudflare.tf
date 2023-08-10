@@ -1,10 +1,10 @@
 resource "cloudflare_record" "reading_list" {
   zone_id = var.cloudflare_zone_id
   name    = local.project_name
-  value   = "cname.vercel-dns.com"
+  value   = cloudflare_pages_project.reading_list.subdomain
   type    = "CNAME"
-  ttl     = 3600
-  proxied = false
+  ttl     = 1
+  proxied = true
 }
 
 resource "cloudflare_pages_project" "reading_list" {
@@ -60,15 +60,6 @@ resource "cloudflare_pages_domain" "reading_list_pages" {
   account_id   = var.cloudflare_account_id
   project_name = cloudflare_pages_project.reading_list.name
   domain       = "${local.project_name}-pages.jpedroh.dev"
-}
-
-resource "cloudflare_record" "reading_list_pages" {
-  zone_id = var.cloudflare_zone_id
-  name    = "${local.project_name}-pages"
-  value   = cloudflare_pages_project.reading_list.subdomain
-  type    = "CNAME"
-  ttl     = 1
-  proxied = true
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}
