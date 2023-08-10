@@ -22,7 +22,16 @@ module "jpedroh_dev" {
 
   cloudflare_account = module.global.cloudflare_account
   cloudflare_zone    = module.global.cloudflare_zone
-  github_username       = module.global.github_current_username
+  github_username    = module.global.github_current_username
+}
+
+module "todos_board" {
+  source     = "./todos-board"
+  depends_on = [module.global]
+
+  cloudflare_account = module.global.cloudflare_account
+  cloudflare_zone    = module.global.cloudflare_zone
+  github_username    = module.global.github_current_username
 }
 
 module "mach" {
