@@ -12,10 +12,6 @@ provider "planetscale" {
   service_token    = var.planetscale_service_token
 }
 
-provider "vercel" {
-  api_token = var.vercel_api_token
-}
-
 module "global" {
   source = "./global"
 }

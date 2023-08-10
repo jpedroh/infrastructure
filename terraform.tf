@@ -20,9 +20,5 @@ terraform {
       source  = "koslib/planetscale"
       version = "~> 0.6.0"
     }
-    vercel = {
-      source  = "vercel/vercel"
-      version = "~> 0.3"
-    }
   }
 }

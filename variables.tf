@@ -23,11 +23,6 @@ variable "planetscale_service_token" {
   sensitive = true
 }
 
-variable "vercel_api_token" {
-  type      = string
-  sensitive = true
-}
-
 variable "otp_secret_production" {
   type      = string
   sensitive = true
