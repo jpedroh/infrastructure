@@ -70,3 +70,18 @@ resource "cloudflare_record" "reading_list_pages" {
   ttl     = 1
   proxied = true
 }
+
+data "cloudflare_api_token_permission_groups" "all" {}
+
+resource "cloudflare_api_token" "wait_for_pages_deployment" {
+  name = "${local.project_name}_wait_for_pages_deployment"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.account["Pages Read"],
+    ]
+    resources = {
+      "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+    }
+  }
+}

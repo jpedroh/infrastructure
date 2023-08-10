@@ -59,3 +59,21 @@ resource "github_actions_secret" "database_url" {
   secret_name     = "database_url"
   plaintext_value = var.database_url_preview
 }
+
+resource "github_actions_secret" "cloudflare_wait_for_deploy_api_token" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_wait_for_deploy_api_token"
+  plaintext_value = cloudflare_api_token.wait_for_pages_deployment.value
+}
+
+resource "github_actions_secret" "cloudflare_account_id" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_account_id"
+  plaintext_value = var.cloudflare_account_id
+}
+
+resource "github_actions_secret" "cloudflare_project_name" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_project_name"
+  plaintext_value = cloudflare_pages_project.reading_list.name
+}
