@@ -1,12 +1,3 @@
-resource "cloudflare_record" "mach" {
-  zone_id = var.cloudflare_zone.id
-  name    = local.project_name
-  value   = "cname.vercel-dns.com"
-  type    = "CNAME"
-  ttl     = 3600
-  proxied = false
-}
-
 resource "cloudflare_pages_project" "mach" {
   account_id        = var.cloudflare_account.id
   name              = local.project_name
@@ -52,4 +43,19 @@ resource "cloudflare_pages_project" "mach" {
       }
     }
   }
+}
+
+resource "cloudflare_pages_domain" "reading_list" {
+  account_id   = var.cloudflare_account.id
+  project_name = cloudflare_pages_project.mach.name
+  domain       = "${local.project_name}.${var.cloudflare_zone.zone}"
+}
+
+resource "cloudflare_record" "mach" {
+  zone_id = var.cloudflare_zone.id
+  name    = local.project_name
+  value   = cloudflare_pages_project.mach.subdomain
+  type    = "CNAME"
+  ttl     = 1
+  proxied = true
 }
