@@ -36,6 +36,8 @@ module "mach" {
   cloudflare_account = module.global.cloudflare_account
   cloudflare_zone    = module.global.cloudflare_zone
 
+  github_username = module.global.github_current_username
+
   database_host_production     = module.global.planetscale_database_production_host
   database_username_production = module.global.planetscale_database_production_username
   database_password_production = module.global.planetscale_database_production_password
