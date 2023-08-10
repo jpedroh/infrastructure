@@ -26,7 +26,7 @@ resource "cloudflare_pages_project" "mach" {
   }
 
   build_config {
-    build_command   = "cd packages/app && npx @cloudflare/next-on-pages@1"
+    build_command   = "npx nx build @mach/app && cd packages/app && npx @cloudflare/next-on-pages@1"
     destination_dir = "packages/app/.vercel/output/static"
   }
 
