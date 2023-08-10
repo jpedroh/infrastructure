@@ -33,7 +33,7 @@ resource "cloudflare_pages_project" "reading_list" {
   deployment_configs {
     production {
       compatibility_flags = ["nodejs_compat"]
-      environment_variables = {
+      secrets = {
         DATABASE_HOST     = var.database_host_production
         DATABASE_USERNAME = var.database_username_production
         DATABASE_PASSWORD = var.database_password_production
@@ -44,7 +44,7 @@ resource "cloudflare_pages_project" "reading_list" {
     }
     preview {
       compatibility_flags = ["nodejs_compat"]
-      environment_variables = {
+      secrets = {
         DATABASE_HOST     = var.database_host_preview
         DATABASE_USERNAME = var.database_username_preview
         DATABASE_PASSWORD = var.database_password_preview
