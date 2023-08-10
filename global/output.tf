@@ -1,9 +1,9 @@
-output "cloudflare_account_id" {
-  value = cloudflare_account.main.id
+output "cloudflare_account" {
+  value = cloudflare_account.main
 }
 
-output "cloudflare_zone_id" {
-  value = cloudflare_zone.jpedroh_dev.id
+output "cloudflare_zone" {
+  value = cloudflare_zone.jpedroh_dev
 }
 
 output "github_current_username" {

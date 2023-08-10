@@ -1,5 +1,5 @@
 resource "cloudflare_record" "reading_list" {
-  zone_id = var.cloudflare_zone_id
+  zone_id = var.cloudflare_zone.id
   name    = local.project_name
   value   = cloudflare_pages_project.reading_list.subdomain
   type    = "CNAME"
@@ -8,7 +8,7 @@ resource "cloudflare_record" "reading_list" {
 }
 
 resource "cloudflare_pages_project" "reading_list" {
-  account_id        = var.cloudflare_account_id
+  account_id        = var.cloudflare_account.id
   name              = local.project_name
   production_branch = github_branch_default.reading_list.branch
 
@@ -56,10 +56,10 @@ resource "cloudflare_pages_project" "reading_list" {
   }
 }
 
-resource "cloudflare_pages_domain" "reading_list_pages" {
-  account_id   = var.cloudflare_account_id
+resource "cloudflare_pages_domain" "reading_list" {
+  account_id   = var.cloudflare_account.id
   project_name = cloudflare_pages_project.reading_list.name
-  domain       = "${local.project_name}.jpedroh.dev"
+  domain       = "${local.project_name}.${var.cloudflare_zone.zone}"
 }
 
 data "cloudflare_api_token_permission_groups" "all" {}
@@ -72,7 +72,7 @@ resource "cloudflare_api_token" "wait_for_pages_deployment" {
       data.cloudflare_api_token_permission_groups.all.account["Pages Read"],
     ]
     resources = {
-      "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      "com.cloudflare.api.account.${var.cloudflare_account.id}" = "*"
     }
   }
 }

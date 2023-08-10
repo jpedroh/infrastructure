@@ -1,9 +1,14 @@
-variable "cloudflare_account_id" {
-  type = string
+variable "cloudflare_account" {
+  type = object({
+    id = string
+  })
 }
 
-variable "cloudflare_zone_id" {
-  type = string
+variable "cloudflare_zone" {
+  type = object({
+    id = string
+    zone = string
+  })
 }
 
 variable "otp_secret_production" {

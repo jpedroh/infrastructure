@@ -24,8 +24,8 @@ module "jpedroh_dev" {
   source     = "./jpedroh.dev"
   depends_on = [module.global]
 
-  cloudflare_account_id = module.global.cloudflare_account_id
-  cloudflare_zone_id    = module.global.cloudflare_zone_id
+  cloudflare_account = module.global.cloudflare_account
+  cloudflare_zone    = module.global.cloudflare_zone
   github_username       = module.global.github_current_username
 }
 
@@ -33,8 +33,8 @@ module "mach" {
   source     = "./mach"
   depends_on = [module.global]
 
-  cloudflare_account_id = module.global.cloudflare_account_id
-  cloudflare_zone_id    = module.global.cloudflare_zone_id
+  cloudflare_account = module.global.cloudflare_account
+  cloudflare_zone    = module.global.cloudflare_zone
 
   database_host_production     = module.global.planetscale_database_production_host
   database_username_production = module.global.planetscale_database_production_username
@@ -52,8 +52,8 @@ module "reading_list" {
   source     = "./reading-list"
   depends_on = [module.global]
 
-  cloudflare_account_id = module.global.cloudflare_account_id
-  cloudflare_zone_id    = module.global.cloudflare_zone_id
+  cloudflare_account = module.global.cloudflare_account
+  cloudflare_zone    = module.global.cloudflare_zone
 
   github_username = module.global.github_current_username
 

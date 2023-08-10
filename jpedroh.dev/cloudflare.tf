@@ -1,5 +1,5 @@
 resource "cloudflare_pages_project" "jpedroh_dev" {
-  account_id        = var.cloudflare_account_id
+  account_id        = var.cloudflare_account.id
   name              = "jpedroh-dev"
   production_branch = github_branch_default.jpedroh_dev.branch
 
@@ -32,19 +32,19 @@ resource "cloudflare_pages_project" "jpedroh_dev" {
 }
 
 resource "cloudflare_pages_domain" "alias" {
-  account_id   = var.cloudflare_account_id
+  account_id   = var.cloudflare_account.id
   project_name = cloudflare_pages_project.jpedroh_dev.name
-  domain       = "jpedroh.dev"
+  domain       = var.cloudflare_zone.zone
 }
 
 resource "cloudflare_pages_domain" "www" {
-  account_id   = var.cloudflare_account_id
+  account_id   = var.cloudflare_account.id
   project_name = cloudflare_pages_project.jpedroh_dev.name
-  domain       = "www.jpedroh.dev"
+  domain       = "www.${var.cloudflare_zone.zone}"
 }
 
 resource "cloudflare_record" "alias" {
-  zone_id = var.cloudflare_zone_id
+  zone_id = var.cloudflare_zone.id
   name    = "@"
   value   = cloudflare_pages_project.jpedroh_dev.subdomain
   type    = "CNAME"
@@ -53,7 +53,7 @@ resource "cloudflare_record" "alias" {
 }
 
 resource "cloudflare_record" "www" {
-  zone_id = var.cloudflare_zone_id
+  zone_id = var.cloudflare_zone.id
   name    = "www"
   value   = cloudflare_pages_project.jpedroh_dev.subdomain
   type    = "CNAME"

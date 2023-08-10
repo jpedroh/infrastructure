@@ -1,5 +1,5 @@
 resource "cloudflare_record" "mach" {
-  zone_id = var.cloudflare_zone_id
+  zone_id = var.cloudflare_zone.id
   name    = local.project_name
   value   = "cname.vercel-dns.com"
   type    = "CNAME"

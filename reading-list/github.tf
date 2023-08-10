@@ -69,7 +69,7 @@ resource "github_actions_secret" "cloudflare_wait_for_deploy_api_token" {
 resource "github_actions_secret" "cloudflare_account_id" {
   repository      = github_repository.reading_list.name
   secret_name     = "cloudflare_account_id"
-  plaintext_value = var.cloudflare_account_id
+  plaintext_value = var.cloudflare_account.id
 }
 
 resource "github_actions_secret" "cloudflare_project_name" {
