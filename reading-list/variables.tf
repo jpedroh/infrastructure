@@ -55,3 +55,7 @@ variable "database_url_preview" {
   type      = string
   sensitive = true
 }
+
+variable "github_username" {
+  type = string
+}

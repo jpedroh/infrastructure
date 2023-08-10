@@ -44,7 +44,7 @@ module "mach" {
   database_username_preview = module.global.planetscale_database_preview_username
   database_password_preview = module.global.planetscale_database_preview_password
 
-  aisweb_api_key = var.aisweb_api_key
+  aisweb_api_key      = var.aisweb_api_key
   aisweb_api_password = var.aisweb_api_password
 }
 
@@ -54,6 +54,8 @@ module "reading_list" {
 
   cloudflare_account_id = module.global.cloudflare_account_id
   cloudflare_zone_id    = module.global.cloudflare_zone_id
+
+  github_username = module.global.github_current_username
 
   database_host_production     = module.global.planetscale_database_production_host
   database_username_production = module.global.planetscale_database_production_username
