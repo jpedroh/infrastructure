@@ -86,4 +86,5 @@ module "reading_list" {
 
   sentry_organization_slug = module.global.sentry_organization_slug
   sentry_team_slug = module.global.sentry_team_slug
+  sentry_auth_token = var.sentry_token
 }

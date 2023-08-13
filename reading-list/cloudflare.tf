@@ -40,6 +40,7 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_SECRET        = var.otp_secret_production
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
+        SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
@@ -55,6 +56,7 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_SECRET        = var.otp_secret_dev_preview
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
+        SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
