@@ -64,3 +64,8 @@ variable "database_url_preview" {
 variable "github_username" {
   type = string
 }
+
+variable "sentry_organization_slug" {
+  type      = string
+  sensitive = true
+}
