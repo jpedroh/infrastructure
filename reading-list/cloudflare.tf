@@ -42,8 +42,8 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_SERVICE       = local.otp_service
       }
       environment_variables = {
-        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
-        SENTRY_ENVIRONMENT = "production"
+        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
       }
     }
     preview {
@@ -57,8 +57,8 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_SERVICE       = local.otp_service
       }
       environment_variables = {
-        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
-        SENTRY_ENVIRONMENT = "preview"
+        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
       }
     }
   }
