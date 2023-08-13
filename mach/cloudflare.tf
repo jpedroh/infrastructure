@@ -30,10 +30,11 @@ resource "cloudflare_pages_project" "mach" {
         DATABASE_PASSWORD   = var.database_password_production
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
+        SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
-        SENTRY_ENVIRONMENT = "production"
+        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.mach.dsn_public
+        NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
       }
     }
     preview {
@@ -44,16 +45,17 @@ resource "cloudflare_pages_project" "mach" {
         DATABASE_PASSWORD   = var.database_password_preview
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
+        SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
-        SENTRY_ENVIRONMENT = "preview" 
+        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.mach.dsn_public
+        NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
       }
     }
   }
 }
 
-resource "cloudflare_pages_domain" "reading_list" {
+resource "cloudflare_pages_domain" "mach" {
   account_id   = var.cloudflare_account.id
   project_name = cloudflare_pages_project.mach.name
   domain       = "${local.project_name}.${var.cloudflare_zone.zone}"

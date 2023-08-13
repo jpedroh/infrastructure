@@ -1,4 +1,4 @@
-resource "sentry_project" "reading_list" {
+resource "sentry_project" "mach" {
   organization = var.sentry_organization_slug
   teams = [ var.sentry_team_slug ]
 
@@ -6,9 +6,9 @@ resource "sentry_project" "reading_list" {
   platform = "javascript-nextjs"
 }
 
-data "sentry_key" "reading_list" {
+data "sentry_key" "mach" {
   organization = var.sentry_organization_slug
-  project      = sentry_project.reading_list.slug
+  project      = sentry_project.mach.slug
 
   first = true
 }

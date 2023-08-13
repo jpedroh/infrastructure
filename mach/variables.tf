@@ -55,6 +55,11 @@ variable "github_username" {
   type = string
 }
 
+variable "sentry_auth_token" {
+  type      = string
+  sensitive = true
+}
+
 variable "sentry_organization_slug" {
   type      = string
 }
