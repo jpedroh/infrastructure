@@ -57,6 +57,9 @@ module "mach" {
 
   aisweb_api_key      = var.aisweb_api_key
   aisweb_api_password = var.aisweb_api_password
+
+  sentry_organization_slug = module.global.sentry_organization_slug
+  sentry_team_slug = module.global.sentry_team_slug
 }
 
 module "reading_list" {

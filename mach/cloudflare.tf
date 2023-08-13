@@ -31,6 +31,10 @@ resource "cloudflare_pages_project" "mach" {
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
       }
+      environment_variables = {
+        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        SENTRY_ENVIRONMENT = "production"
+      }
     }
     preview {
       compatibility_flags = ["nodejs_compat"]
@@ -40,6 +44,10 @@ resource "cloudflare_pages_project" "mach" {
         DATABASE_PASSWORD   = var.database_password_preview
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
+      }
+      environment_variables = {
+        SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        SENTRY_ENVIRONMENT = "preview" 
       }
     }
   }

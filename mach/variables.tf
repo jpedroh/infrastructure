@@ -54,3 +54,11 @@ variable "aisweb_api_password" {
 variable "github_username" {
   type = string
 }
+
+variable "sentry_organization_slug" {
+  type      = string
+}
+
+variable "sentry_team_slug" {
+  type      = string
+}
