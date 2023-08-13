@@ -82,4 +82,5 @@ module "reading_list" {
   otp_secret_dev_preview = var.otp_secret_dev_preview
 
   sentry_organization_slug = module.global.sentry_organization_slug
+  sentry_team_slug = module.global.sentry_team_slug
 }

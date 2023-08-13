@@ -6,5 +6,6 @@ locals {
   database_preview_branch_name     = "preview"
   planetscale_service_organization = "joao-pedro-hsd"
   planetscale_hostname             = "aws.connect.psdb.cloud"
-  sentry_organization_slug         = "jpedroh"
+  sentry_organization_name         = "jpedroh"
+  sentry_team_name                 = "jpedroh"
 }

@@ -53,3 +53,7 @@ output "planetscale_database_preview_url" {
 output sentry_organization_slug {
   value = sentry_organization.jpedroh.slug
 }
+
+output sentry_team_slug {
+  value = sentry_team.jpedroh.slug
+}
