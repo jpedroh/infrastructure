@@ -67,10 +67,8 @@ variable "github_username" {
 
 variable "sentry_organization_slug" {
   type      = string
-  sensitive = true
 }
 
 variable "sentry_team_slug" {
   type      = string
-  sensitive = true
 }
