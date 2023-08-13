@@ -3,7 +3,7 @@ resource "sentry_project" "reading_list" {
   teams = [ var.sentry_team_slug ]
 
   name     = local.project_name
-  platform = "javascript"
+  platform = "javascript-nextjs"
 }
 
 data "sentry_key" "reading_list" {
