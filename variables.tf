@@ -42,3 +42,8 @@ variable "aisweb_api_password" {
   type      = string
   sensitive = true
 }
+
+variable "sentry_token" {
+  type      = string
+  sensitive = true
+}

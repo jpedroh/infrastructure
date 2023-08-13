@@ -12,6 +12,10 @@ provider "planetscale" {
   service_token    = var.planetscale_service_token
 }
 
+provider "sentry" {
+  token = var.sentry_token
+}
+
 module "global" {
   source = "./global"
 }

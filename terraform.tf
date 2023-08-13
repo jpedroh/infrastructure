@@ -20,5 +20,9 @@ terraform {
       source  = "koslib/planetscale"
       version = "~> 0.6.0"
     }
+    sentry = {
+      source = "jianyuan/sentry"
+      version = "~> 0.9"
+    }
   }
 }

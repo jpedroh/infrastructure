@@ -49,3 +49,7 @@ output "planetscale_database_preview_url" {
   value     = format("mysql://%s:%s@%s/%s?ssl={\"rejectUnauthorized\":true}", planetscale_database_branch_password.preview.username, planetscale_database_branch_password.preview.plaintext, local.planetscale_hostname, local.database_name)
   sensitive = true
 }
+
+output sentry_organization_slug {
+  value = sentry_organization.jpedroh.slug
+}
