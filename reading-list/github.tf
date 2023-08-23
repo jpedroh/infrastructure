@@ -1,6 +1,7 @@
 resource "github_repository" "reading_list" {
   name          = local.project_name
   description   = "A personal reading list to save interesting articles regarding Software Engineering."
+  allow_auto_merge = true
   has_downloads = true
   has_issues    = true
   has_projects  = true
