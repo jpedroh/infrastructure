@@ -1,3 +1,10 @@
+resource "planetscale_database" "main" {
+  organization = local.planetscale_service_organization
+  name         = local.database_name
+  region       = local.database_region
+  notes        = ""
+}
+
 resource "planetscale_database_branch_password" "production" {
   organization = local.planetscale_service_organization
   database     = local.database_name
