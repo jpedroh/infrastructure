@@ -33,7 +33,7 @@ resource "cloudflare_pages_project" "mach" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.mach.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
       }
     }
@@ -48,7 +48,7 @@ resource "cloudflare_pages_project" "mach" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.mach.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
       }
     }

@@ -6,9 +6,9 @@ resource "sentry_project" "reading_list" {
   platform = "javascript-nextjs"
 }
 
-data "sentry_key" "reading_list" {
-  organization = var.sentry_organization_slug
-  project      = sentry_project.reading_list.slug
+resource "sentry_key" "reading_list" {
+  organization = sentry_project.reading_list.organization
 
-  first = true
+  project = sentry_project.reading_list.slug
+  name    = "Default"
 }

@@ -43,7 +43,7 @@ resource "cloudflare_pages_project" "reading_list" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
       }
     }
@@ -59,7 +59,7 @@ resource "cloudflare_pages_project" "reading_list" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = data.sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
       }
     }
