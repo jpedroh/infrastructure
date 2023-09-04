@@ -10,7 +10,7 @@ resource "planetscale_database_branch" "production" {
   database      = planetscale_database.main.name
   name          = local.database_production_branch_name
   region        = local.database_region
-  parent_branch = null
+  parent_branch = ""
 }
 
 resource "planetscale_database_branch" "preview" {
