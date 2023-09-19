@@ -70,3 +70,33 @@ resource "github_actions_secret" "aisweb_api_password" {
   secret_name     = "aisweb_api_password"
   plaintext_value = var.aisweb_api_password
 }
+
+resource "github_dependabot_secret" "database_host_preview" {
+  repository      = github_repository.mach.name
+  secret_name     = "database_host_preview"
+  plaintext_value = var.database_host_preview
+}
+
+resource "github_dependabot_secret" "database_username_preview" {
+  repository      = github_repository.mach.name
+  secret_name     = "database_username_preview"
+  plaintext_value = var.database_username_preview
+}
+
+resource "github_dependabot_secret" "database_password_preview" {
+  repository      = github_repository.mach.name
+  secret_name     = "database_password_preview"
+  plaintext_value = var.database_password_preview
+}
+
+resource "github_dependabot_secret" "aisweb_api_key" {
+  repository      = github_repository.mach.name
+  secret_name     = "aisweb_api_key"
+  plaintext_value = var.aisweb_api_key
+}
+
+resource "github_dependabot_secret" "aisweb_api_password" {
+  repository      = github_repository.mach.name
+  secret_name     = "aisweb_api_password"
+  plaintext_value = var.aisweb_api_password
+}
