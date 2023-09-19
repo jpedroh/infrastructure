@@ -1,12 +1,12 @@
 resource "github_repository" "reading_list" {
-  name          = local.project_name
-  description   = "A personal reading list to save interesting articles regarding Software Engineering."
+  name             = local.project_name
+  description      = "A personal reading list to save interesting articles regarding Software Engineering."
   allow_auto_merge = true
-  has_downloads = true
-  has_issues    = true
-  has_projects  = true
-  has_wiki      = true
-  homepage_url  = "https://reading-list.jpedroh.dev"
+  has_downloads    = true
+  has_issues       = true
+  has_projects     = true
+  has_wiki         = true
+  homepage_url     = "https://reading-list.jpedroh.dev"
 }
 
 resource "github_branch" "main" {
@@ -119,4 +119,22 @@ resource "github_dependabot_secret" "database_url" {
   repository      = github_repository.reading_list.name
   secret_name     = "database_url"
   plaintext_value = var.database_url_preview
+}
+
+resource "github_dependabot_secret" "cloudflare_wait_for_deploy_api_token" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_wait_for_deploy_api_token"
+  plaintext_value = cloudflare_api_token.wait_for_pages_deployment.value
+}
+
+resource "github_dependabot_secret" "cloudflare_account_id" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_account_id"
+  plaintext_value = var.cloudflare_account.id
+}
+
+resource "github_dependabot_secret" "cloudflare_project_name" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "cloudflare_project_name"
+  plaintext_value = cloudflare_pages_project.reading_list.name
 }
