@@ -41,6 +41,14 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
+
+        // NX Cache
+        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
+        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
+        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+        NXCACHE_AWS_REGION            = "auto"
+        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
+        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public
@@ -57,6 +65,14 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
+
+        // NX Cache
+        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
+        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
+        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+        NXCACHE_AWS_REGION            = "auto"
+        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
+        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public

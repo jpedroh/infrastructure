@@ -6,7 +6,7 @@ variable "cloudflare_account" {
 
 variable "cloudflare_zone" {
   type = object({
-    id = string
+    id   = string
     zone = string
   })
 }
@@ -71,9 +71,19 @@ variable "sentry_auth_token" {
 }
 
 variable "sentry_organization_slug" {
-  type      = string
+  type = string
 }
 
 variable "sentry_team_slug" {
+  type = string
+}
+
+variable "cloudflare_r2_access_key_id" {
   type      = string
+  sensitive = true
+}
+
+variable "cloudflare_r2_secret_access_key" {
+  type      = string
+  sensitive = true
 }
