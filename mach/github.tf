@@ -100,3 +100,75 @@ resource "github_dependabot_secret" "aisweb_api_password" {
   secret_name     = "aisweb_api_password"
   plaintext_value = var.aisweb_api_password
 }
+
+# resource "github_actions_secret" "nxcache_aws_access_key_id" {
+#   repository = github_repository.mach
+#   secret_name = "nxcache_aws_access_key_id"
+#   plaintext_value = ""
+# }
+
+# resource "github_actions_secret" "nxcache_aws_secret_access_key" {
+#   repository = github_repository.mach
+#   secret_name = "nxcache_aws_secret_access_key"
+#   plaintext_value = ""
+# }
+
+resource "github_actions_secret" "nxcache_aws_endpoint" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_endpoint"
+  plaintext_value = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+}
+
+resource "github_actions_secret" "nxcache_aws_region" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_region"
+  plaintext_value = "auto"
+}
+
+resource "github_actions_secret" "nxcache_aws_bucket" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_bucket"
+  plaintext_value = cloudflare_r2_bucket.nx_cache_bucket.name
+}
+
+resource "github_actions_secret" "nxcache_aws_force_path_style" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_force_path_style"
+  plaintext_value = "true"
+}
+
+# resource "github_dependabot_secret" "nxcache_aws_access_key_id" {
+#   repository = github_repository.mach
+#   secret_name = "nxcache_aws_access_key_id"
+#   plaintext_value = ""
+# }
+
+# resource "github_dependabot_secret" "nxcache_aws_secret_access_key" {
+#   repository = github_repository.mach
+#   secret_name = "nxcache_aws_secret_access_key"
+#   plaintext_value = ""
+# }
+
+resource "github_dependabot_secret" "nxcache_aws_endpoint" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_endpoint"
+  plaintext_value = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+}
+
+resource "github_dependabot_secret" "nxcache_aws_region" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_region"
+  plaintext_value = "auto"
+}
+
+resource "github_dependabot_secret" "nxcache_aws_bucket" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_bucket"
+  plaintext_value = cloudflare_r2_bucket.nx_cache_bucket.name
+}
+
+resource "github_dependabot_secret" "nxcache_aws_force_path_style" {
+  repository      = github_repository.mach.name
+  secret_name     = "nxcache_aws_force_path_style"
+  plaintext_value = "true"
+}
