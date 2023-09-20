@@ -61,6 +61,9 @@ module "mach" {
   sentry_organization_slug = module.global.sentry_organization_slug
   sentry_team_slug = module.global.sentry_team_slug
   sentry_auth_token = var.sentry_token
+
+  cloudflare_r2_access_key_id = var.cloudflare_r2_access_key_id
+  cloudflare_r2_secret_access_key = var.cloudflare_r2_secret_access_key
 }
 
 module "reading_list" {

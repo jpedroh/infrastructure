@@ -102,13 +102,13 @@ resource "github_dependabot_secret" "aisweb_api_password" {
 }
 
 resource "github_actions_secret" "nxcache_aws_access_key_id" {
-  repository = github_repository.mach
+  repository = github_repository.mach.name
   secret_name = "nxcache_aws_access_key_id"
   plaintext_value = var.cloudflare_r2_access_key_id
 }
 
 resource "github_actions_secret" "nxcache_aws_secret_access_key" {
-  repository = github_repository.mach
+  repository = github_repository.mach.name
   secret_name = "nxcache_aws_secret_access_key"
   plaintext_value = var.cloudflare_r2_secret_access_key
 }
@@ -138,13 +138,13 @@ resource "github_actions_secret" "nxcache_aws_force_path_style" {
 }
 
 resource "github_dependabot_secret" "nxcache_aws_access_key_id" {
-  repository = github_repository.mach
+  repository = github_repository.mach.name
   secret_name = "nxcache_aws_access_key_id"
   plaintext_value = var.cloudflare_r2_access_key_id
 }
 
 resource "github_dependabot_secret" "nxcache_aws_secret_access_key" {
-  repository = github_repository.mach
+  repository = github_repository.mach.name
   secret_name = "nxcache_aws_secret_access_key"
   plaintext_value = var.cloudflare_r2_secret_access_key
 }

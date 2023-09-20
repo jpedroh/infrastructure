@@ -30,7 +30,15 @@ resource "cloudflare_pages_project" "mach" {
         DATABASE_PASSWORD   = var.database_password_production
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
-        SENTRY_AUTH_TOKEN = var.sentry_auth_token
+        SENTRY_AUTH_TOKEN   = var.sentry_auth_token
+
+        // NX Cache
+        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
+        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
+        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+        NXCACHE_AWS_REGION            = "auto"
+        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
+        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
@@ -45,7 +53,15 @@ resource "cloudflare_pages_project" "mach" {
         DATABASE_PASSWORD   = var.database_password_preview
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
-        SENTRY_AUTH_TOKEN = var.sentry_auth_token
+        SENTRY_AUTH_TOKEN   = var.sentry_auth_token
+
+        // NX Cache
+        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
+        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
+        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
+        NXCACHE_AWS_REGION            = "auto"
+        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
+        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
