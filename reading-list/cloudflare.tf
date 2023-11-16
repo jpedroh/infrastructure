@@ -87,18 +87,3 @@ resource "cloudflare_pages_domain" "reading_list" {
   project_name = cloudflare_pages_project.reading_list.name
   domain       = "${local.project_name}.${var.cloudflare_zone.zone}"
 }
-
-data "cloudflare_api_token_permission_groups" "all" {}
-
-resource "cloudflare_api_token" "wait_for_pages_deployment" {
-  name = "${local.project_name}_wait_for_pages_deployment"
-
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.account["Pages Read"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.${var.cloudflare_account.id}" = "*"
-    }
-  }
-}
