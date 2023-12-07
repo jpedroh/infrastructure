@@ -26,7 +26,7 @@ resource "cloudflare_pages_project" "reading_list" {
   }
 
   build_config {
-    build_command   = "npx @cloudflare/next-on-pages@1"
+    build_command   = "pnpm run pack"
     destination_dir = ".vercel/output/static"
   }
 
