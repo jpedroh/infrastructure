@@ -6,6 +6,12 @@ resource "github_repository" "infrastructure" {
   name        = "infrastructure"
   description = "A repository to manage infrastructure for my personal projects"
   topics      = ["terraform", "iac"]
+
+  allow_auto_merge = true
+  allow_merge_commit = false
+  allow_squash_merge = true
+  allow_rebase_merge = true
+  delete_branch_on_merge = true
 }
 
 resource "github_branch" "main" {
