@@ -5,6 +5,7 @@ provider "registry.terraform.io/cloudflare/cloudflare" {
   version     = "4.13.0"
   constraints = "~> 4.0"
   hashes = [
+    "h1:aU4V+gO1jeG0B04XwgIkFmiF1tKL5fED2YQ4AsBm5uo=",
     "h1:yZmDO/wLTGFveiWfASqUVqfyU1ZYykrT35looNDvfsc=",
     "zh:018e3185b1f183b216a55d762fe7e1895b510ecff4003b98896ab4afde261a0e",
     "zh:07f27bea122a0ec1c36b82360d99f20534a4242e43d59d2ad775cbbc591267d3",
@@ -24,10 +25,34 @@ provider "registry.terraform.io/cloudflare/cloudflare" {
   ]
 }
 
+provider "registry.terraform.io/hashicorp/aws" {
+  version     = "4.67.0"
+  constraints = "~> 4.0"
+  hashes = [
+    "h1:5Zfo3GfRSWBaXs4TGQNOflr1XaYj6pRnVJLX5VAjFX4=",
+    "zh:0843017ecc24385f2b45f2c5fce79dc25b258e50d516877b3affee3bef34f060",
+    "zh:19876066cfa60de91834ec569a6448dab8c2518b8a71b5ca870b2444febddac6",
+    "zh:24995686b2ad88c1ffaa242e36eee791fc6070e6144f418048c4ce24d0ba5183",
+    "zh:4a002990b9f4d6d225d82cb2fb8805789ffef791999ee5d9cb1fef579aeff8f1",
+    "zh:559a2b5ace06b878c6de3ecf19b94fbae3512562f7a51e930674b16c2f606e29",
+    "zh:6a07da13b86b9753b95d4d8218f6dae874cf34699bca1470d6effbb4dee7f4b7",
+    "zh:768b3bfd126c3b77dc975c7c0e5db3207e4f9997cf41aa3385c63206242ba043",
+    "zh:7be5177e698d4b547083cc738b977742d70ed68487ce6f49ecd0c94dbf9d1362",
+    "zh:8b562a818915fb0d85959257095251a05c76f3467caa3ba95c583ba5fe043f9b",
+    "zh:9b12af85486a96aedd8d7984b0ff811a4b42e3d88dad1a3fb4c0b580d04fa425",
+    "zh:9c385d03a958b54e2afd5279cd8c7cbdd2d6ca5c7d6a333e61092331f38af7cf",
+    "zh:b3ca45f2821a89af417787df8289cb4314b273d29555ad3b2a5ab98bb4816b3b",
+    "zh:da3c317f1db2469615ab40aa6baba63b5643bae7110ff855277a1fb9d8eb4f2c",
+    "zh:dc6430622a8dc5cdab359a8704aec81d3825ea1d305bbb3bbd032b1c6adfae0c",
+    "zh:fac0d2ddeadf9ec53da87922f666e1e73a603a611c57bcbc4b86ac2821619b1d",
+  ]
+}
+
 provider "registry.terraform.io/integrations/github" {
   version     = "5.34.0"
   constraints = "~> 5.0"
   hashes = [
+    "h1:XuhF0Y9UJrEWq14TdFbfDBq0LbI9ernk/WUtCMf/T6c=",
     "h1:cqONWwrmsDhf8bqHcSXeN08DOrSxU6yoGYiKTVXh9SA=",
     "zh:1f7405d5b29f6c2c76742abf254a13ce553f72c5abd2c5533d0581b4ad4ab794",
     "zh:340e9ae09768075c8057c24f4ecf67b429317b59a4c78f99f30a67c8ced255ed",
@@ -50,6 +75,7 @@ provider "registry.terraform.io/jianyuan/sentry" {
   version     = "0.11.2"
   constraints = "~> 0.9"
   hashes = [
+    "h1:BYBD63nVJTX5ftOafc2qsXqUfJE0uHpgOYwdN8MoGmA=",
     "h1:mH11dy5NY/IIKN8euNZ9iEFr0Oj4eIOnDJisQ1KaOB4=",
     "zh:0fa82a384b25a58b65523e0ea4768fa1212b1f5cfc0c9379d31162454fedcc9d",
     "zh:41f14cd790dc8c453b276168882279f6e18afab5095dd89422a9603349a76164",
@@ -74,6 +100,7 @@ provider "registry.terraform.io/koslib/planetscale" {
   constraints = "~> 0.7.0"
   hashes = [
     "h1:3KNEkrcC4lD9A4GRJQngtuybX7g7JXbJ/1IMas8U1bE=",
+    "h1:5TIr+0nMUOTXctL7DPPyJqwU5nlTcmVqiwLUFB8ECPM=",
     "zh:5434c0c428cffd79e01b1e8c5fc46248221fca2699a6adbe8907e43e891ce8ce",
     "zh:599a625b8e8e01328ae8d615b9edc068b44721992e1d0a70ba3f6c311014c8eb",
     "zh:5b615b9f276a3416de1ba18004242652c870208789ef5e4146569cd8ec58b1aa",

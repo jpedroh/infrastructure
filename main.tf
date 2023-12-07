@@ -16,6 +16,18 @@ provider "sentry" {
   token = var.sentry_token
 }
 
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.cloudflare_r2_access_key_id
+  secret_key = var.cloudflare_r2_secret_access_key
+  skip_credentials_validation = true
+  skip_region_validation = true
+  skip_requesting_account_id = true
+  endpoints {
+    s3 = "https://${module.global.cloudflare_account.id}.r2.cloudflarestorage.com"
+  }
+}
+
 module "global" {
   source = "./global"
 }
