@@ -24,7 +24,7 @@ provider "aws" {
   skip_region_validation = true
   skip_requesting_account_id = true
   endpoints {
-    s3 = "https://b9293857b6d65fdf3249e60f6393fe21.r2.cloudflarestorage.com"
+    s3 = "https://${module.global.cloudflare_account.id}.r2.cloudflarestorage.com"
   }
 }
 
