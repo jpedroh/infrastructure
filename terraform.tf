@@ -24,5 +24,9 @@ terraform {
       source = "jianyuan/sentry"
       version = "~> 0.9"
     }
+    aws = {
+      source = "hashicorp/aws"
+      version = "~> 4"
+    }
   }
 }
