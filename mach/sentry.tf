@@ -12,3 +12,18 @@ resource "sentry_key" "mach" {
   project = sentry_project.mach.slug
   name    = "Default"
 }
+
+resource "sentry_project" "mach_rpl_crawler" {
+  organization = var.sentry_organization_slug
+  teams        = [var.sentry_team_slug]
+
+  name     = "mach-rpl-crawler"
+  platform = "nodejs"
+}
+
+resource "sentry_key" "mach_rpl_crawler" {
+  organization = sentry_project.mach_rpl_crawler.organization
+
+  project = sentry_project.mach_rpl_crawler.slug
+  name    = "Default"
+}

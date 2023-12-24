@@ -137,6 +137,12 @@ resource "github_actions_secret" "nxcache_aws_force_path_style" {
   plaintext_value = "true"
 }
 
+resource "github_actions_secret" "rpl_crawler_sentry_dsn" {
+  repository      = github_repository.mach.name
+  secret_name     = "rpl_crawler_sentry_dsn"
+  plaintext_value = sentry_key.mach_rpl_crawler.dsn_public
+}
+
 resource "github_dependabot_secret" "nxcache_aws_access_key_id" {
   repository = github_repository.mach.name
   secret_name = "nxcache_aws_access_key_id"
