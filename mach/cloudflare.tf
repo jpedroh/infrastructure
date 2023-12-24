@@ -17,8 +17,8 @@ resource "cloudflare_pages_project" "mach" {
   }
 
   build_config {
-    build_command   = "pnpm pack:app"
-    destination_dir = "packages/app/.vercel/output/static"
+    build_command   = "pnpm pack:web"
+    destination_dir = "apps/web/.vercel/output/static"
   }
 
   deployment_configs {
