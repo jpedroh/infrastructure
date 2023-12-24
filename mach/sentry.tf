@@ -18,7 +18,7 @@ resource "sentry_project" "mach_rpl_crawler" {
   teams        = [var.sentry_team_slug]
 
   name     = "mach-rpl-crawler"
-  platform = "nodejs"
+  platform = "node"
 }
 
 resource "sentry_key" "mach_rpl_crawler" {
