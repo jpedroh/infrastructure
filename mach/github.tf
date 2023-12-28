@@ -13,11 +13,6 @@ resource "github_repository" "mach" {
   vulnerability_alerts = true
 }
 
-resource "github_branch" "master" {
-  repository = github_repository.mach.name
-  branch     = "master"
-}
-
 resource "github_branch" "main" {
   repository    = github_repository.mach.name
   branch        = "main"
