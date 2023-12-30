@@ -57,3 +57,8 @@ variable "cloudflare_r2_secret_access_key" {
   type      = string
   sensitive = true
 }
+
+variable "posthog_key" {
+  type       = string
+  sensitive = true
+}
