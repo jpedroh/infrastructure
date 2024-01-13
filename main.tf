@@ -32,6 +32,15 @@ module "global" {
   source = "./global"
 }
 
+module "jpedroh_dev" {
+  source     = "./jpedroh.dev"
+  depends_on = [module.global]
+
+  cloudflare_account = module.global.cloudflare_account
+  cloudflare_zone    = module.global.cloudflare_zone
+  github_username    = module.global.github_current_username
+}
+
 module "mach" {
   source     = "./mach"
   depends_on = [module.global]
