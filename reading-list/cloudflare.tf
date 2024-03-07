@@ -42,6 +42,10 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_SERVICE       = local.otp_service
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
 
+        // TursoDB tokens
+        TURSO_CONNECTION_URL = "libsql://reading-list-jpedroh.turso.io"
+        TURSO_AUTH_TOKEN = var.turso_reading_list_token
+
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
         NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
@@ -65,6 +69,10 @@ resource "cloudflare_pages_project" "reading_list" {
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
+
+        // TursoDB tokens
+        TURSO_CONNECTION_URL = "libsql://reading-list-dev-jpedroh.turso.io"
+        TURSO_AUTH_TOKEN = var.turso_reading_list_preview_token
 
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id

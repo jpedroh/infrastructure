@@ -99,4 +99,7 @@ module "reading_list" {
 
   cloudflare_r2_access_key_id     = var.cloudflare_r2_access_key_id
   cloudflare_r2_secret_access_key = var.cloudflare_r2_secret_access_key
+
+  turso_reading_list_token = var.turso_reading_list_token
+  turso_reading_list_preview_token = var.turso_reading_list_preview_token
 }

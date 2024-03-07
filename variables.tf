@@ -62,3 +62,13 @@ variable "posthog_key" {
   type       = string
   sensitive = true
 }
+
+variable "turso_reading_list_token" {
+  type       = string
+  sensitive = true
+}
+
+variable "turso_reading_list_preview_token" {
+  type       = string
+  sensitive = true
+}
