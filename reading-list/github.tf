@@ -198,3 +198,27 @@ resource "github_dependabot_secret" "nxcache_aws_force_path_style" {
   secret_name     = "nxcache_aws_force_path_style"
   plaintext_value = "true"
 }
+
+resource "github_actions_secret" "turso_connection_url" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "turso_connection_url"
+  plaintext_value = "libsql://reading-list-dev-jpedroh.turso.io"
+}
+
+resource "github_dependabot_secret" "turso_connection_url" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "turso_connection_url"
+  plaintext_value = "libsql://reading-list-dev-jpedroh.turso.io"
+}
+
+resource "github_actions_secret" "turso_auth_token" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "turso_auth_token"
+  plaintext_value = var.turso_reading_list_preview_token
+}
+
+resource "github_dependabot_secret" "turso_auth_token" {
+  repository      = github_repository.reading_list.name
+  secret_name     = "turso_auth_token"
+  plaintext_value = var.turso_reading_list_preview_token
+}
