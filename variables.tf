@@ -72,3 +72,14 @@ variable "turso_reading_list_preview_token" {
   type       = string
   sensitive = true
 }
+
+variable "turso_mach_token" {
+  type       = string
+  sensitive = true
+}
+
+variable "turso_mach_preview_token" {
+  type       = string
+  sensitive = true
+}
+
