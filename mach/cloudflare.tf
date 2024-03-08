@@ -25,9 +25,6 @@ resource "cloudflare_pages_project" "mach" {
     production {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        DATABASE_HOST       = var.database_host_production
-        DATABASE_USERNAME   = var.database_username_production
-        DATABASE_PASSWORD   = var.database_password_production
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
@@ -56,9 +53,6 @@ resource "cloudflare_pages_project" "mach" {
     preview {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        DATABASE_HOST       = var.database_host_preview
-        DATABASE_USERNAME   = var.database_username_preview
-        DATABASE_PASSWORD   = var.database_password_preview
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
