@@ -80,16 +80,6 @@ module "reading_list" {
 
   github_username = module.global.github_current_username
 
-  database_host_production     = module.global.planetscale_database_production_host
-  database_username_production = module.global.planetscale_database_production_username
-  database_password_production = module.global.planetscale_database_production_password
-  database_url_production      = module.global.planetscale_database_production_url
-
-  database_host_preview     = module.global.planetscale_database_preview_host
-  database_username_preview = module.global.planetscale_database_preview_username
-  database_password_preview = module.global.planetscale_database_preview_password
-  database_url_preview      = module.global.planetscale_database_preview_url
-
   otp_secret_production  = var.otp_secret_production
   otp_secret_dev_preview = var.otp_secret_dev_preview
 

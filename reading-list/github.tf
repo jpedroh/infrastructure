@@ -37,30 +37,6 @@ resource "github_actions_secret" "otp_service" {
   plaintext_value = local.otp_service
 }
 
-resource "github_actions_secret" "database_host" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_host"
-  plaintext_value = var.database_host_preview
-}
-
-resource "github_actions_secret" "database_username" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_username"
-  plaintext_value = var.database_username_preview
-}
-
-resource "github_actions_secret" "database_password" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_password"
-  plaintext_value = var.database_password_preview
-}
-
-resource "github_actions_secret" "database_url" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_url"
-  plaintext_value = var.database_url_preview
-}
-
 resource "github_actions_secret" "cloudflare_account_id" {
   repository      = github_repository.reading_list.name
   secret_name     = "cloudflare_account_id"
@@ -89,30 +65,6 @@ resource "github_dependabot_secret" "otp_service" {
   repository      = github_repository.reading_list.name
   secret_name     = "otp_service"
   plaintext_value = local.otp_service
-}
-
-resource "github_dependabot_secret" "database_host" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_host"
-  plaintext_value = var.database_host_preview
-}
-
-resource "github_dependabot_secret" "database_username" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_username"
-  plaintext_value = var.database_username_preview
-}
-
-resource "github_dependabot_secret" "database_password" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_password"
-  plaintext_value = var.database_password_preview
-}
-
-resource "github_dependabot_secret" "database_url" {
-  repository      = github_repository.reading_list.name
-  secret_name     = "database_url"
-  plaintext_value = var.database_url_preview
 }
 
 resource "github_dependabot_secret" "cloudflare_account_id" {

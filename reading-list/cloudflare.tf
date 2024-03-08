@@ -34,9 +34,6 @@ resource "cloudflare_pages_project" "reading_list" {
     production {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        DATABASE_HOST     = var.database_host_production
-        DATABASE_USERNAME = var.database_username_production
-        DATABASE_PASSWORD = var.database_password_production
         OTP_SECRET        = var.otp_secret_production
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
@@ -62,9 +59,6 @@ resource "cloudflare_pages_project" "reading_list" {
     preview {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        DATABASE_HOST     = var.database_host_preview
-        DATABASE_USERNAME = var.database_username_preview
-        DATABASE_PASSWORD = var.database_password_preview
         OTP_SECRET        = var.otp_secret_dev_preview
         OTP_USER          = local.otp_user
         OTP_SERVICE       = local.otp_service
