@@ -32,6 +32,10 @@ resource "cloudflare_pages_project" "mach" {
         AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
 
+        // TursoDB tokens
+        TURSO_CONNECTION_URL = "libsql://mach-jpedroh.turso.io"
+        TURSO_AUTH_TOKEN = var.turso_mach_token
+
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
         NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
@@ -58,6 +62,10 @@ resource "cloudflare_pages_project" "mach" {
         AISWEB_API_KEY      = var.aisweb_api_key
         AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
+
+        // TursoDB tokens
+        TURSO_CONNECTION_URL = "libsql://mach-dev-jpedroh.turso.io"
+        TURSO_AUTH_TOKEN = var.turso_mach_preview_token
 
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id

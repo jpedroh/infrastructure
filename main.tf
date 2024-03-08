@@ -69,6 +69,9 @@ module "mach" {
   cloudflare_r2_secret_access_key = var.cloudflare_r2_secret_access_key
 
   posthog_key = var.posthog_key
+
+  turso_mach_token = var.turso_mach_token
+  turso_mach_preview_token = var.turso_mach_preview_token
 }
 
 module "reading_list" {
