@@ -11,36 +11,6 @@ variable "cloudflare_zone" {
   })
 }
 
-variable "database_host_preview" {
-  type      = string
-  sensitive = true
-}
-
-variable "database_username_preview" {
-  type      = string
-  sensitive = true
-}
-
-variable "database_password_preview" {
-  type      = string
-  sensitive = true
-}
-
-variable "database_host_production" {
-  type      = string
-  sensitive = true
-}
-
-variable "database_username_production" {
-  type      = string
-  sensitive = true
-}
-
-variable "database_password_production" {
-  type      = string
-  sensitive = true
-}
-
 variable "aisweb_api_key" {
   type      = string
   sensitive = true
