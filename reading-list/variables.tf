@@ -58,3 +58,8 @@ variable "turso_reading_list_preview_token" {
   sensitive = true
 }
 
+variable "turso_api_token" {
+  type       = string
+  sensitive = true
+}
+

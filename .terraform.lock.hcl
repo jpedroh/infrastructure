@@ -95,6 +95,29 @@ provider "registry.terraform.io/jianyuan/sentry" {
   ]
 }
 
+provider "registry.terraform.io/jpedroh/turso" {
+  version     = "0.1.0"
+  constraints = "0.1.0"
+  hashes = [
+    "h1:uADWMoKOQBvZYaf2fAQ+Iy5swTVbll7037NzFPc+Qac=",
+    "zh:20f96516d181283ec09685a2839223d0b95d7d91701ee649d04f4be284a7181b",
+    "zh:331d3e48def156ef3161951783f445700c121d4d832cff35166a9438be99f62b",
+    "zh:362d6dea01e85a9608c04bc594f61bd4854d360e764c27adc09a52ed7e24f0b8",
+    "zh:3e598a2c18be208d3433597468a277bbbf60bea9eb9796ebc59abec2ea35c215",
+    "zh:618c7aed2326ecedacae506edce1ab152721c1673f1f841688d1c4b1f372882a",
+    "zh:64e96a7e8b3c3ff92fb63aa537e7f574243f430d2d02652c61f1fbe25cd06b54",
+    "zh:7042a9c0db7e796ff013b3c44f8b0de49b7afa651fe6eeab5eeb7e4c5eacd7c4",
+    "zh:8669ba5e24b510308ad46ff4cd7ee5f32f782888b54d4b7fece5f6c53d8c0253",
+    "zh:88107a2f630f85d0adc4336fe194a9009c7738356f779f9285c7f8cf09ca0536",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:9a1b6159f65a6eee5852cd8410c4e0456238c3ea5c1845f0bdb14e924adf8c67",
+    "zh:9b09945ab6ec475c63efd9ba45cf8e4e9dc23afc4c734d9348eee9446e6b569c",
+    "zh:9ea66a22372ee505d1fc51483f33f25dd4bd24bab3735b921c4a9f1a57affb0f",
+    "zh:acdb25bf0adc93eaf9492c825b0ffa4fa550760b771403781dad2a192308b868",
+    "zh:f8165d06f46f6f6aabe7051c4ded6a89d98aa4bca5c5f64a84de5e1509bf62f5",
+  ]
+}
+
 provider "registry.terraform.io/koslib/planetscale" {
   version     = "0.7.0"
   constraints = "~> 0.7.0"

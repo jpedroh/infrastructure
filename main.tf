@@ -28,6 +28,10 @@ provider "aws" {
   }
 }
 
+provider "turso" {
+  api_token = var.turso_api_token
+}
+
 module "global" {
   source = "./global"
 }
@@ -87,4 +91,6 @@ module "reading_list" {
 
   turso_reading_list_token = var.turso_reading_list_token
   turso_reading_list_preview_token = var.turso_reading_list_preview_token
+
+  turso_api_token = var.turso_api_token
 }

@@ -83,3 +83,8 @@ variable "turso_mach_preview_token" {
   sensitive = true
 }
 
+variable "turso_api_token" {
+  type       = string
+  sensitive = true
+}
+
