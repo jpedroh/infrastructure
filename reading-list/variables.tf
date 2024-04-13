@@ -48,16 +48,6 @@ variable "cloudflare_r2_secret_access_key" {
   sensitive = true
 }
 
-variable "turso_reading_list_token" {
-  type       = string
-  sensitive = true
-}
-
-variable "turso_reading_list_preview_token" {
-  type       = string
-  sensitive = true
-}
-
 variable "turso_api_token" {
   type       = string
   sensitive = true
