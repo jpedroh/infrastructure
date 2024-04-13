@@ -10,7 +10,7 @@ resource "turso_database_token" "production" {
 
 data "turso_database" "preview" {
     organization_name = "jpedroh"
-    database_name = "reading-list-dev"
+    name = "reading-list-dev"
 }
 
 resource "turso_database_token" "preview" {
