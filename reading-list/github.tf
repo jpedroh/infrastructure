@@ -154,13 +154,13 @@ resource "github_dependabot_secret" "nxcache_aws_force_path_style" {
 resource "github_actions_secret" "turso_connection_url" {
   repository      = github_repository.reading_list.name
   secret_name     = "turso_connection_url"
-  plaintext_value = data.turso_database.preview.hostname
+  plaintext_value = "libsql://${data.turso_database.preview.hostname}"
 }
 
 resource "github_dependabot_secret" "turso_connection_url" {
   repository      = github_repository.reading_list.name
   secret_name     = "turso_connection_url"
-  plaintext_value = data.turso_database.preview.hostname
+  plaintext_value = "libsql://${data.turso_database.preview.hostname}"
 }
 
 resource "github_actions_secret" "turso_auth_token" {

@@ -129,13 +129,13 @@ resource "github_dependabot_secret" "nxcache_aws_force_path_style" {
 resource "github_actions_secret" "turso_connection_url" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url"
-  plaintext_value = data.turso_database.preview.hostname
+  plaintext_value = "libsql://${data.turso_database.preview.hostname}"
 }
 
 resource "github_dependabot_secret" "turso_connection_url" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url"
-  plaintext_value = data.turso_database.preview.hostname
+  plaintext_value = "libsql://${data.turso_database.preview.hostname}"
 }
 
 resource "github_actions_secret" "turso_auth_token" {
@@ -153,7 +153,7 @@ resource "github_dependabot_secret" "turso_auth_token" {
 resource "github_actions_secret" "turso_connection_url_production" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url_production"
-  plaintext_value = data.turso_database.production.hostname
+  plaintext_value = "libsql://${data.turso_database.production.hostname}"
 }
 
 resource "github_actions_secret" "turso_auth_token_production" {
