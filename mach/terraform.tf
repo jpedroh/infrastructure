@@ -16,5 +16,9 @@ terraform {
       source = "hashicorp/aws"
       version = "~> 4"
     }
+    turso = {
+      source = "jpedroh/turso"
+      version = "0.2.0"
+    }
   }
 }

@@ -129,35 +129,35 @@ resource "github_dependabot_secret" "nxcache_aws_force_path_style" {
 resource "github_actions_secret" "turso_connection_url" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url"
-  plaintext_value = "libsql://mach-dev-jpedroh.turso.io"
+  plaintext_value = data.turso_database.preview.hostname
 }
 
 resource "github_dependabot_secret" "turso_connection_url" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url"
-  plaintext_value = "libsql://mach-dev-jpedroh.turso.io"
+  plaintext_value = data.turso_database.preview.hostname
 }
 
 resource "github_actions_secret" "turso_auth_token" {
   repository      = github_repository.mach.name
   secret_name     = "turso_auth_token"
-  plaintext_value = var.turso_mach_preview_token
+  plaintext_value = resource.turso_database_token.preview.jwt
 }
 
 resource "github_dependabot_secret" "turso_auth_token" {
   repository      = github_repository.mach.name
   secret_name     = "turso_auth_token"
-  plaintext_value = var.turso_mach_preview_token
+  plaintext_value = resource.turso_database_token.preview.jwt
 }
 
 resource "github_actions_secret" "turso_connection_url_production" {
   repository      = github_repository.mach.name
   secret_name     = "turso_connection_url_production"
-  plaintext_value = "libsql://mach-jpedroh.turso.io"
+  plaintext_value = data.turso_database.production.hostname
 }
 
 resource "github_actions_secret" "turso_auth_token_production" {
   repository      = github_repository.mach.name
   secret_name     = "turso_auth_token_production"
-  plaintext_value = var.turso_mach_token
+  plaintext_value = resource.turso_database_token.production.jwt
 }

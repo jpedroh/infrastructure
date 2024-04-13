@@ -66,8 +66,7 @@ module "mach" {
 
   posthog_key = var.posthog_key
 
-  turso_mach_token = var.turso_mach_token
-  turso_mach_preview_token = var.turso_mach_preview_token
+  turso_api_token = var.turso_api_token
 }
 
 module "reading_list" {
