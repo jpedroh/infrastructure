@@ -40,8 +40,8 @@ resource "cloudflare_pages_project" "reading_list" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
 
         // TursoDB tokens
-        TURSO_CONNECTION_URL = "libsql://reading-list-jpedroh.turso.io"
-        TURSO_AUTH_TOKEN = var.turso_reading_list_token
+        TURSO_CONNECTION_URL = data.turso_database.production.hostname
+        TURSO_AUTH_TOKEN = resource.turso_database_token.production.jwt
 
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
@@ -65,8 +65,8 @@ resource "cloudflare_pages_project" "reading_list" {
         SENTRY_AUTH_TOKEN = var.sentry_auth_token
 
         // TursoDB tokens
-        TURSO_CONNECTION_URL = "libsql://reading-list-dev-jpedroh.turso.io"
-        TURSO_AUTH_TOKEN = var.turso_reading_list_preview_token
+        TURSO_CONNECTION_URL = data.turso_database.preview.hostname
+        TURSO_AUTH_TOKEN = resource.turso_database_token.preview.jwt
 
         // NX Cache
         NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
