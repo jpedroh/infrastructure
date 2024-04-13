@@ -159,5 +159,5 @@ resource "github_actions_secret" "turso_connection_url_production" {
 resource "github_actions_secret" "turso_auth_token_production" {
   repository      = github_repository.mach.name
   secret_name     = "turso_auth_token_production"
-  plaintext_value = var.turso_mach_production_token
+  plaintext_value = var.turso_mach_token
 }
