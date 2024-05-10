@@ -64,8 +64,6 @@ module "mach" {
   cloudflare_r2_access_key_id     = var.cloudflare_r2_access_key_id
   cloudflare_r2_secret_access_key = var.cloudflare_r2_secret_access_key
 
-  posthog_key = var.posthog_key
-
   turso_api_token = var.turso_api_token
 }
 

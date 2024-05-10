@@ -48,11 +48,6 @@ variable "cloudflare_r2_secret_access_key" {
   sensitive = true
 }
 
-variable "posthog_key" {
-  type       = string
-  sensitive = true
-}
-
 variable "turso_api_token" {
   type       = string
   sensitive = true

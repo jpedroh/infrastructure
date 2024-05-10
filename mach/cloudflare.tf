@@ -25,8 +25,6 @@ resource "cloudflare_pages_project" "mach" {
     production {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        AISWEB_API_KEY      = var.aisweb_api_key
-        AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
 
         // TursoDB tokens
@@ -40,10 +38,6 @@ resource "cloudflare_pages_project" "mach" {
         NXCACHE_AWS_REGION            = "auto"
         NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
         NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
-
-        // Posthog
-        NEXT_PUBLIC_POSTHOG_KEY       = var.posthog_key
-        NEXT_PUBLIC_POSTHOG_HOST      = "https://us.posthog.com"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
@@ -53,8 +47,6 @@ resource "cloudflare_pages_project" "mach" {
     preview {
       compatibility_flags = ["nodejs_compat"]
       secrets = {
-        AISWEB_API_KEY      = var.aisweb_api_key
-        AISWEB_API_PASSWORD = var.aisweb_api_password
         SENTRY_AUTH_TOKEN   = var.sentry_auth_token
 
         // TursoDB tokens
@@ -68,10 +60,6 @@ resource "cloudflare_pages_project" "mach" {
         NXCACHE_AWS_REGION            = "auto"
         NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
         NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
-
-        // Posthog
-        NEXT_PUBLIC_POSTHOG_KEY       = var.posthog_key
-        NEXT_PUBLIC_POSTHOG_HOST      = "https://us.posthog.com"
       }
       environment_variables = {
         NEXT_PUBLIC_SENTRY_DSN         = sentry_key.mach.dsn_public
