@@ -78,7 +78,7 @@ resource "cloudflare_pages_domain" "mach" {
 resource "cloudflare_record" "mach" {
   zone_id = var.cloudflare_zone.id
   name    = local.project_name
-  value   = cloudflare_pages_project.mach.subdomain
+  content   = cloudflare_pages_project.mach.subdomain
   type    = "CNAME"
   ttl     = 1
   proxied = true

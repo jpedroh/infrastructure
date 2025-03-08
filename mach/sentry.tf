@@ -3,7 +3,7 @@ resource "sentry_project" "mach" {
   teams        = [var.sentry_team_slug]
 
   name     = local.project_name
-  platform = "javascript-nextjs"
+  platform = "javascript-remix"
 }
 
 resource "sentry_key" "mach" {

@@ -1,7 +1,7 @@
 resource "cloudflare_record" "reading_list" {
   zone_id = var.cloudflare_zone.id
   name    = local.project_name
-  value   = cloudflare_pages_project.reading_list.subdomain
+  content   = cloudflare_pages_project.reading_list.subdomain
   type    = "CNAME"
   ttl     = 1
   proxied = true

@@ -46,7 +46,7 @@ resource "cloudflare_pages_domain" "www" {
 resource "cloudflare_record" "alias" {
   zone_id = var.cloudflare_zone.id
   name    = "@"
-  value   = cloudflare_pages_project.jpedroh_dev.subdomain
+  content   = cloudflare_pages_project.jpedroh_dev.subdomain
   type    = "CNAME"
   ttl     = 1
   proxied = true
@@ -55,7 +55,7 @@ resource "cloudflare_record" "alias" {
 resource "cloudflare_record" "www" {
   zone_id = var.cloudflare_zone.id
   name    = "www"
-  value   = cloudflare_pages_project.jpedroh_dev.subdomain
+  content   = cloudflare_pages_project.jpedroh_dev.subdomain
   type    = "CNAME"
   ttl     = 1
   proxied = true
