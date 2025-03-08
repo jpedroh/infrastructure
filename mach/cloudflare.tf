@@ -30,14 +30,6 @@ resource "cloudflare_pages_project" "mach" {
         // TursoDB tokens
         TURSO_CONNECTION_URL = "libsql://${data.turso_database.production.hostname}"
         TURSO_AUTH_TOKEN = resource.turso_database_token.production.jwt
-
-        // NX Cache
-        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
-        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
-        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
-        NXCACHE_AWS_REGION            = "auto"
-        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
-        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         VITE_SENTRY_DSN         = sentry_key.mach.dsn_public
@@ -52,14 +44,6 @@ resource "cloudflare_pages_project" "mach" {
         // TursoDB tokens
         TURSO_CONNECTION_URL = "libsql://${data.turso_database.preview.hostname}"
         TURSO_AUTH_TOKEN = resource.turso_database_token.preview.jwt
-
-        // NX Cache
-        NXCACHE_AWS_ACCESS_KEY_ID     = var.cloudflare_r2_access_key_id
-        NXCACHE_AWS_SECRET_ACCESS_KEY = var.cloudflare_r2_secret_access_key
-        NXCACHE_AWS_ENDPOINT          = "https://${var.cloudflare_account.id}.r2.cloudflarestorage.com/"
-        NXCACHE_AWS_REGION            = "auto"
-        NXCACHE_AWS_BUCKET            = cloudflare_r2_bucket.nx_cache_bucket.name
-        NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
         VITE_SENTRY_DSN         = sentry_key.mach.dsn_public
