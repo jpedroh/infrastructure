@@ -33,6 +33,8 @@ resource "cloudflare_pages_project" "reading_list" {
   deployment_configs {
     production {
       compatibility_flags = ["nodejs_compat"]
+      compatibility_date = "2024-09-23"
+
       secrets = {
         OTP_SECRET        = var.otp_secret_production
         OTP_USER          = local.otp_user
@@ -58,6 +60,8 @@ resource "cloudflare_pages_project" "reading_list" {
     }
     preview {
       compatibility_flags = ["nodejs_compat"]
+      compatibility_date = "2024-09-23"
+
       secrets = {
         OTP_SECRET        = var.otp_secret_dev_preview
         OTP_USER          = local.otp_user
