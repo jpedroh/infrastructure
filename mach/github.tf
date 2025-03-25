@@ -51,7 +51,7 @@ resource "github_dependabot_secret" "aisweb_api_password" {
 resource "github_actions_secret" "rpl_crawler_sentry_dsn" {
   repository      = github_repository.mach.name
   secret_name     = "rpl_crawler_sentry_dsn"
-  plaintext_value = sentry_key.mach_rpl_crawler.dsn_public
+  plaintext_value = sentry_key.mach_rpl_crawler.dsn["public"]
 }
 
 resource "github_actions_secret" "turso_connection_url" {

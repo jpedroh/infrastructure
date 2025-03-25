@@ -54,7 +54,7 @@ resource "cloudflare_pages_project" "reading_list" {
         NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn["public"]
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
       }
     }
@@ -81,7 +81,7 @@ resource "cloudflare_pages_project" "reading_list" {
         NXCACHE_AWS_FORCE_PATH_STYLE  = "true"
       }
       environment_variables = {
-        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn_public
+        NEXT_PUBLIC_SENTRY_DSN         = sentry_key.reading_list.dsn["public"]
         NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
       }
     }

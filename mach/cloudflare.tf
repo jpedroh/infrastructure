@@ -32,7 +32,7 @@ resource "cloudflare_pages_project" "mach" {
         TURSO_AUTH_TOKEN = resource.turso_database_token.production.jwt
       }
       environment_variables = {
-        VITE_SENTRY_DSN         = sentry_key.mach.dsn_public
+        VITE_SENTRY_DSN         = sentry_key.mach.dsn["public"]
         VITE_SENTRY_ENVIRONMENT = "production"
       }
     }
@@ -46,7 +46,7 @@ resource "cloudflare_pages_project" "mach" {
         TURSO_AUTH_TOKEN = resource.turso_database_token.preview.jwt
       }
       environment_variables = {
-        VITE_SENTRY_DSN         = sentry_key.mach.dsn_public
+        VITE_SENTRY_DSN         = sentry_key.mach.dsn["public"]
         VITE_SENTRY_ENVIRONMENT = "preview"
       }
     }
