@@ -17,8 +17,8 @@ resource "cloudflare_pages_project" "jpedroh_dev" {
   }
 
   build_config {
-    build_command   = "npx @cloudflare/next-on-pages@1"
-    destination_dir = ".vercel/output/static"
+    build_command   = "pnpm run build"
+    destination_dir = "dist"
   }
 
   deployment_configs {
